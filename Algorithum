@@ -1,0 +1,23 @@
+Step1: Connect the water pump to 13 and sensor to pin 8. Step2: Call for function setup();
+Step3: Call function loop();
+FUNCTION setup():
+Step 1: set the pin mode for 13 as the output pin
+Step 2: set the pin mode for pin 8 as input pin
+Step 3: open the Serial port and set the data rate to 9600bps Step 4: while(!Serial)
+print("Speed 0 to 255");
+FUCTION loop()
+Step 1: if (Serial.available()) input speed
+Step 2 : if(Speed>=0 && speed<=255) set Speed
+Step 3 : val= soil moisture Step 4 : if(val==LOW)
+Confirmation from user and pass to motor Step 5 : else
+Wait for 2mins gotostep1
+PseudoCode:-
+“void sensorRead(){ value=analogRead(A0);
+value= constrain(value,500,1000);
+soil=map(value,400,1000,100,0); }
+Void loop(){ sensorRead(); lcd.Cursor(0,0); lcd.print(“Moisture=”); lcd.print(soil); lcd.print(“%”); if(soil<=38) {
+lcd.Cursor(0,1); lcd.print(“Pump:ON”); digitalWrite(WATERPIN,LOW); while(soil<=47){
+readSensor();
+delay(100); }
+lcd.Cursor(0,1); lcd.print(“pump:OFF”); digitalWrite(WATERPIN,HIGH)”;
+} }
